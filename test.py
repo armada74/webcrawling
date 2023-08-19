@@ -14,13 +14,13 @@ def spider():
 
     # converting plain_text to Beautiful Soup object so the library can sort thru it
     convert_data = BeautifulSoup(plain_text, 'lxml')
-
+  
     # sorting useful information
     for link in convert_data.findAll('a', {'class': 'h_notice'}):
         href = base_url + link.get('href')  # Building a clickable url
         title = link.string  # just the text not the html
         print(href)  # displaying href
         print(title)  # displaying title
-
+    #  수정 확인
 
 spider()
